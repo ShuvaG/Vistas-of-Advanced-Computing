@@ -1,9 +1,10 @@
 // Gaussian Elimination
 #include <iostream>
 #include <algorithm>
+#include <math.h>
 using namespace std;
 
-int const N = 3;
+int const N = 2;
 double a[N][N];
 double b[N];
 double x[N];
@@ -13,6 +14,8 @@ double x[N];
 void print_matrix(double a[N][N], double b[N], int n);
 void pivot(double a[N][N], int k, double b[N], int n);
 void solve_matrix(double a[N][N], double b[N], int n);
+double roundoff(double number, int x, int type)
+
 
 /*int input_matrix()
 {
@@ -41,6 +44,40 @@ void solve_matrix(double a[N][N], double b[N], int n);
 	}
 	return n;
 }*/
+double roundoff(double number, int x, int type)
+{
+	double newNumber, bigger_number, finalAnswer, roundofferror, multiplier;
+	string up, down, integer;
+	finalAnswer = 0;
+	multiplier = pow(10, x);
+	newNumber = number * multiplier;
+	switch (type)
+	{
+	case 1:
+		bigger_number = ceilf(newNumber);
+		finalAnswer = bigger_number / multiplier;
+		cout << "The rounded number is: " << finalAnswer << endl;
+		roundofferror = abs((number - finalAnswer) / number);
+		cout << "The round-off error: " << roundofferror << endl;
+		break;
+	case 2:
+		bigger_number = floorf(newNumber);
+		finalAnswer = bigger_number / multiplier;
+		cout << "The rounded number is: " << finalAnswer << endl;
+		roundofferror = abs((number - finalAnswer) / number);
+		cout << "The round-off error: " << roundofferror << endl;
+		break;
+	case 3:
+		bigger_number = round(newNumber);
+		finalAnswer = bigger_number / multiplier;
+		cout << "The rounded number is: " << finalAnswer << endl;
+		roundofferror = abs((number - finalAnswer) / number);
+		cout << "The round-off error: " << roundofferror << endl;
+		break;
+	}
+
+	return finalAnswer;
+}
 void print_matrix(double a[N][N], double b[N], int n)
 {
 	cout << "The entered matrix is:" << endl;
@@ -55,10 +92,10 @@ void print_matrix(double a[N][N], double b[N], int n)
 }
 void pivot(double a[N][N], int k, double b[N], int n)
 {
-	int new_row;
 	double largest_num;
 	double copy_row[N];
 	double copy_b;
+	int new_row = k;
 	largest_num = abs(a[k][k]); // this predefines the current row/column as the largest value (this is along the main diagonal)
 	for (int i = k + 1;i < n;i++) // this will go down the column and find a larger value
 	{
@@ -103,7 +140,7 @@ void solve_matrix(double a[N][N], double b[N], int n)
 			b[i] = b[i] - factor * b[k]; 
 		}
 	}
-	x[n - 1] = b[n - 1] / a[n - 1][n - 1]; // this solves for the value on the last row
+	x[n - 1] = b[n - 1] / a[n - 1][n - 1]; // this solves for the value on the last row (if a[n-1][n-1] = 0, cannot be solved)
 	for (int i = n - 1; i >= 0; i--) // this loops starts the backwards subsititution
 	{
 		sum = b[i];
@@ -122,13 +159,12 @@ void solve_matrix(double a[N][N], double b[N], int n)
 }
 int main()
 {
-	const int n = 3;
+	const int n = 2;
 	double x[n];
 	double a[n][n] = {
-		{1,2, - 2},
-		{2,1,-5},
-		{1,-4,1} };
-	double b[n] = { -15,-21,18 };
+		{.0003*pow(10,20), 3*pow(10,20)},
+		{pow(10,20), pow(10,20)} };
+	double b[n] = { 2.0001*pow(10,20), pow(10,20) };
 
 	//int n;
 	//n = input_matrix(); // this asks users to put in their own matrix
