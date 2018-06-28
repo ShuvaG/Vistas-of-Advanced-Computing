@@ -1,0 +1,5 @@
+﻿  Class Notes.cpp
+c:\users\shuva\source\repos\class notes\class notes\class notes.cpp(670): warning C4018: '<=': signed/unsigned mismatch
+c:\users\shuva\source\repos\class notes\class notes\class notes.cpp(672): warning C4018: '<=': signed/unsigned mismatch
+c:\users\shuva\source\repos\class notes\class notes\class notes.cpp(676): error C2440: '=': cannot convert from 'const char [2]' to 'char'
+  c:\users\shuva\source\repos\class notes\class notes\class notes.cpp(676): note: There is no context in which this conversion is possible

@@ -1,0 +1,6 @@
+﻿  Gaussian Elimination.cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\gaussian elimination\gaussian elimination\gaussian elimination.cpp(57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\gaussian elimination\gaussian elimination\gaussian elimination.cpp(61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\gaussian elimination\gaussian elimination\gaussian elimination.cpp(49): warning C4101: 'roundofferror': unreferenced local variable
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\gaussian elimination\gaussian elimination\gaussian elimination.cpp(157): warning C4101: 'x': unreferenced local variable
+  Gaussian Elimination.vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Gaussian Elimination\Debug\Gaussian Elimination.exe
