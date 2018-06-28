@@ -4,7 +4,7 @@
 #include <math.h>
 using namespace std;
 
-int const N = 2;
+int const N = 3;
 double a[N][N];
 double b[N];
 double x[N];
@@ -126,7 +126,7 @@ void solve_matrix(double a[N][N], double b[N], int n)
 		for (int i = k + 1; i < n; i++) // row index
 		{
 			factor = a[i][k] / a[k][k]; // decides the factor to multiply in order to get a zero
-			factor = roundoff(factor, 3, 3);
+			//factor = roundoff(factor, 3, 1);
 			for (int j = k + 1; j < n; j++) // this loops makes it zero
 			{
 				a[i][j] = a[i][j] - factor * a[k][j];
@@ -153,12 +153,13 @@ void solve_matrix(double a[N][N], double b[N], int n)
 }
 int main()
 {
-	const int n = 2;
+	const int n = 3;
 	double x[n];
 	double a[n][n] = {
-		{.0003*pow(10,20), 3*pow(10,20)},
-		{pow(10,20), pow(10,20)} };
-	double b[n] = { 2.0001*pow(10,20), pow(10,20) };
+		{3,2,-4},
+		{2,3,3},
+		{5,-3,1} };
+	double b[n] = {3,15,14};
 
 	//int n;
 	//n = input_matrix(); // this asks users to put in their own matrix
