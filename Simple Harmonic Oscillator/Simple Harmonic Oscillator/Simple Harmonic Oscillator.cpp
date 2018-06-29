@@ -2,24 +2,6 @@
 #include <math.h>
 using namespace std;
 
-void error_formula(double &n2, double &n1, double &h)
-{
-	double tolerance1 = pow(10, -4);
-	double tolerance2 = 0.09;
-	double error;
-
-	error = abs((n1 - n2) / n2);
-
-	if (error < tolerance1)
-		h *= 2;
-	if (error > tolerance2)
-	{
-		h *= .5; // Reduces the delta t to half
-		n2 = (n2 - n1)*.5; // Cuts the distance in half
-		cout << "Error h:" << h << endl;
-	}
-}
-
 double HeunsMetu1(double v, double k, double x, double h, double t)
 {
 	double vstar = 0;
@@ -46,7 +28,7 @@ int main()
 	Xo = 1; //initial condition
 	Vo = 0; //initial condition
 	k = 3;
-	h = .001; //Step increment for time (N=Totalt number of points)
+	h = .001; //Step increment for time (N=Total number of points)
 	t = 2 * pi;
 
 	x = Xo;
@@ -58,8 +40,7 @@ int main()
 		x1 = x + .5*(v + HeunsMetu1(v, k, x, h, i))*h;
 		v1 = v + .5*(((-k)*k*x) + (-k)*k*HeunsMetu2(x, v, h, i))*h;
 
-		error_formula(x1, x, h);
-		cout << "Changed h: " << h << endl;
+		//cout << "Changed h: " << h << endl;
 
 		x = x1;
 		v = v1;
