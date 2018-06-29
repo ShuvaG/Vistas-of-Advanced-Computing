@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <fstream>
 using namespace std;
 
 double HeunsMetu1(double v, double k, double x, double h, double t)
@@ -21,6 +22,8 @@ int main()
 {
 	double v, k, x, h, Xo, Vo, t, x1, v1;
 	double pi = 3.14159;
+	ofstream x_values("x_values");
+	ofstream t_values("t_values");
 
 	// (dx/dt) f1=v
 	// (dv/dt) f2=-k^2*x
@@ -30,7 +33,6 @@ int main()
 	k = 3;
 	h = .001; //Step increment for time (N=Total number of points)
 	t = 2 * pi;
-
 	x = Xo;
 	v = Vo;
 
@@ -39,12 +41,14 @@ int main()
 	{
 		x1 = x + .5*(v + HeunsMetu1(v, k, x, h, i))*h;
 		v1 = v + .5*(((-k)*k*x) + (-k)*k*HeunsMetu2(x, v, h, i))*h;
-
-		//cout << "Changed h: " << h << endl;
-
 		x = x1;
 		v = v1;
+		x_values << x << " ";
+		t_values << i << " ";
 	}
+
+	x_values.close();
+	t_values.close();
 
 	cout << "The approximate value of x=" << x << endl << "The actual value of x=" << Xo * cos(k*t) << endl << endl;
 	cout << "The approximate value of v=" << v << endl << "The actual value of v=" << -k * x*sin(k*t) << endl;

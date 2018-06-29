@@ -1,4 +1,4 @@
-// Gaussian Elimination
+// Gauss Elimination
 #include <iostream>
 #include <algorithm>
 #include <math.h>
@@ -10,14 +10,25 @@ double b[N];
 double x[N];
 
 // declaring functions:
-//int input_matrix();
+int input_matrix();
 void print_matrix(double a[N][N], double b[N], int n);
 void pivot(double a[N][N], int k, double b[N], int n);
 void solve_matrix(double a[N][N], double b[N], int n);
 double roundoff(double number, int x, int type);
 
+int main()
+{
+	int n;
+	n = input_matrix(); // this asks users to put in their own matrix
+	print_matrix(a, b, n); // this will print the inputed matrix
+	solve_matrix(a, b, n); // this solves the matrix using Gaussian Elimination and Partial Pivoting
 
-/*int input_matrix()
+	system("PAUSE");
+	return 0;
+}
+
+
+int input_matrix()
 {
 	double user_input;
 	int n;
@@ -43,14 +54,14 @@ double roundoff(double number, int x, int type);
 		counter++;
 	}
 	return n;
-}*/
+}
 double roundoff(double number, int x, int type)
 {
 	double newNumber, bigger_number, finalAnswer, roundofferror, multiplier;
 	string up, down, integer;
 	finalAnswer = 0;
 	multiplier = pow(10, x); // how many decimal places do you want?
-	newNumber = number * multiplier;
+	newNumber = number * multiplier; // this makes the number bigger (moves decimal place) and chops off the numbers after the decimal.
 	switch (type) // this decides if you want to round up, down, or to the closest integer
 	{
 	case 1: // rounds up
@@ -113,7 +124,6 @@ void pivot(double a[N][N], int k, double b[N], int n)
 		b[k] = b[new_row]; // this copies the new b value into the location of the previous max row
 		b[new_row] = copy_b; // this copies the old b value into the location of where the new row used to be
 	}
-	print_matrix(a, b, n);
 }
 void solve_matrix(double a[N][N], double b[N], int n)
 {
@@ -148,24 +158,6 @@ void solve_matrix(double a[N][N], double b[N], int n)
 	cout << "The solution is:" << endl;
 	for (int i = 0; i < n; i++) // this will display the solutions to the matrix
 	{
-		cout << "x" << i+1 << "=" << x[i] << endl;
+		cout << "x" << i+1 << "=" <<roundoff(x[i],2,3) << endl;
 	}
-}
-int main()
-{
-	const int n = 3;
-	double x[n];
-	double a[n][n] = {
-		{3,2,-4},
-		{2,3,3},
-		{5,-3,1} };
-	double b[n] = {3,15,14};
-
-	//int n;
-	//n = input_matrix(); // this asks users to put in their own matrix
-	print_matrix(a, b, n); // this will print the inputed matrix
-	solve_matrix(a, b, n); // this solves the matrix using Gaussian Elimination and Partial Pivoting
-
-	system("PAUSE");
-	return 0;
 }
