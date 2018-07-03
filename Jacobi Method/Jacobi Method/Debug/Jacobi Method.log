@@ -1,0 +1,5 @@
+﻿  Jacobi Method.cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\jacobi method\jacobi method\jacobi method.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\jacobi method\jacobi method\jacobi method.cpp(25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\jacobi method\jacobi method\jacobi method.cpp(13): warning C4101: 'roundofferror': unreferenced local variable
+  Jacobi Method.vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Jacobi Method\Debug\Jacobi Method.exe

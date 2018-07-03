@@ -1,0 +1,5 @@
+﻿  Gauss Seidel.cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\gauss seidel\gauss seidel\gauss seidel.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\gauss seidel\gauss seidel\gauss seidel.cpp(26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\gauss seidel\gauss seidel\gauss seidel.cpp(14): warning C4101: 'roundofferror': unreferenced local variable
+  Gauss Seidel.vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Gauss Seidel\Debug\Gauss Seidel.exe
