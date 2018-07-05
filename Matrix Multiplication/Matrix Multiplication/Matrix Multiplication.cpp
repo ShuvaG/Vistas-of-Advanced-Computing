@@ -13,10 +13,10 @@ double sum = 0;
 int main()
 {
 	const int n = 700;
-	int row1 = n, col1 = n, row2 = n, col2 = n;
+	int row1 = 0, col1 = 0, row2 = 0, col2 = 0;
 	//int response;
-	ofstream array("array_ijk");
-	ofstream time("time_ijk");
+	ofstream array("array_jki");
+	ofstream time("time_jki");
 	clock_t start, end;
 	double cpu_time_used;
 
@@ -26,9 +26,9 @@ int main()
 	//cin >> row2 >> col2;
 
 	//cout << endl << "~Entering value for matrix 1~" << endl;
-	for (int row = 0; row < row1; row++) // populates first matrix
+	for (int row = 0; row < n; row++) // populates first matrix
 	{
-		for (int col = 0; col < col1; col++)
+		for (int col = 0; col < n; col++)
 		{
 			//cout << "Enter the value for a" << row + 1 << col + 1 << ": ";
 			//cin >> response;
@@ -36,39 +36,47 @@ int main()
 		}
 	}
 	//cout << endl << "~Entering value for matrix 2~" << endl;
-	for (int row = 0; row < row2; row++) // poopulates second matrix
+	for (int row = 0; row < n; row++) // poopulates second matrix
 	{
-		for (int col = 0; col < col2; col++)
+		for (int col = 0; col < n; col++)
 		{
 			//cout << "Enter the value for b" << row + 1 << col + 1 << ": ";
 			//cin >> response;
 			matrix_2[row][col] = 2;
 		}
 	}
-	for (int row = 0; row < row1; row++) // initilizes every postion with a zero
+	for (int row = 0; row < n; row++) // initilizes every postion with a zero
 	{
-		for (int col = 0; col < col2; col++)
+		for (int col = 0; col < n; col++)
 		{
 			mult_matrix[row][col] = 0;
 		}
 	}
-	for (int i = 0; i < row1; i++) // multiplies the two matricies
+	double r;
+	for (int a = 0; a < 14; a++)
 	{
+		row1 += 50;
+		col1 += 50;
+		row2 += 50;
+		col2 += 50;
 		start = clock();
-		for (int j = 0; j < col2; j++)
+		for (int j = 0; j < col2; j++) // multiplies the two matricies
 		{
-			sum = 0;
 			for (int k = 0; k < col1; k++)
 			{
-				sum += matrix_1[i][k] * matrix_2[k][j];
+				r = matrix_2[k][j];
+				for (int i = 0; i < row1; i++)
+				{
+					mult_matrix[i][j] += r * matrix_1[i][k];
+				}
 			}
-			mult_matrix[i][j] = sum;
 		}
 		end = clock();
 		cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-		array << i << " ";
+		array << row1 << " ";
 		time << cpu_time_used << " ";
 	}
+	
 	//cout << "The result of multiplying matrix 1 with matrix 2 is: " << endl;
 	//for (int row = 0; row < row1; row++)
 	//{
