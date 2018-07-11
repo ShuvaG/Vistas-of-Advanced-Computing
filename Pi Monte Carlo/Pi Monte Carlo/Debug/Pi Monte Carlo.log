@@ -1,0 +1,6 @@
+﻿  Pi Monte Carlo.cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo\pi monte carlo\pi monte carlo.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo\pi monte carlo\pi monte carlo.cpp(21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo\pi monte carlo\pi monte carlo.cpp(53): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo\pi monte carlo\pi monte carlo.cpp(59): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Pi Monte Carlo.vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Pi Monte Carlo\Debug\Pi Monte Carlo.exe

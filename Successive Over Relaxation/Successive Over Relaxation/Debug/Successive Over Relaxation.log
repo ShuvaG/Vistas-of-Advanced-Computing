@@ -1,0 +1,5 @@
+﻿  Successive Over Relaxation.cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\successive over relaxation\successive over relaxation\successive over relaxation.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\successive over relaxation\successive over relaxation\successive over relaxation.cpp(26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\successive over relaxation\successive over relaxation\successive over relaxation.cpp(14): warning C4101: 'roundofferror': unreferenced local variable
+  Successive Over Relaxation.vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Successive Over Relaxation\Debug\Successive Over Relaxation.exe

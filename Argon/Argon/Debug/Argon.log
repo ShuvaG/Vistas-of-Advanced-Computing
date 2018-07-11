@@ -1,0 +1,6 @@
+﻿  Argon.cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\argon\argon\argon.cpp(18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\argon\argon\argon.cpp(78): warning C4101: 'z_r2': unreferenced local variable
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\argon\argon\argon.cpp(78): warning C4101: 'y_r2': unreferenced local variable
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\argon\argon\argon.cpp(78): warning C4101: 'x_r2': unreferenced local variable
+  Argon.vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Argon\Debug\Argon.exe

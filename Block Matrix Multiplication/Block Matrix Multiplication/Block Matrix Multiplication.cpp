@@ -3,49 +3,35 @@
 #include <time.h>
 using namespace std;
 
-int const N = 512;
-double matrix_1[N][N];
-double matrix_2[N][N];
-double mult_matrix[N][N];
-
 int main()
 {
+	cout << "Computation for a 2048 x 2048 will take over a minute. Please wait." << endl;
+	int *matrix_1, *matrix_2, *mult_matrix;
+	int n = 2048;
+	int B = 128;
+	matrix_1 = (int*)malloc(n*n * sizeof(int));
+	matrix_2 = (int*)malloc(n*n * sizeof(int));
+	mult_matrix = (int*)malloc(n*n * sizeof(int));
+
+	if (matrix_1 == NULL)
+	{
+		printf("Error memory not allocated for mark");
+		exit(0);
+	}
+
 	clock_t start, end;
 	double cpu_time_used;
-	const int n = 512;
 	int row1 = n, col1 = n, row2 = n, col2 = n;
 
-	//cout << "Enter the dimensions of the first matrix: ";
-	//cin >> row1 >> col1;
-	//cout << "Enter the dimensions of the second matrix: ";
-	//cin >> row2 >> col2;
-
-	//cout << endl << "~Entering value for matrix 1~" << endl;
-	for (int row = 0; row < row1; row++) // populates first matrix
+	for (int row = 0; row < n*n; row++) // populates first matrix
 	{
-		for (int col = 0; col < col1; col++)
-		{
-			matrix_1[row][col] = 1;
-		}
+			matrix_1[row]= 1;
+			matrix_2[row] = 2;
+			mult_matrix[row] = 0;
 	}
-	//cout << endl << "~Entering value for matrix 2~" << endl;
-	for (int row = 0; row < row2; row++) // poopulates second matrix
-	{
-		for (int col = 0; col < col1; col++)
-		{
-			matrix_2[row][col] = 1;
-		}
-	}
-	for (int row = 0; row < row1; row++) // initilizes every postion with a zero
-	{
-		for (int col = 0; col < col2; col++)
-		{
-			mult_matrix[row][col] = 0;
-		}
-	}
-
-	int B = 256;
+	int sum = 0;
 	start = clock();
+//#pragma loop(no_vector)
 	for (int ii = 0; ii < n; ii+=B)
 	{
 		for (int jj = 0; jj < n; jj+=B)
@@ -58,7 +44,7 @@ int main()
 					{
 						for (int k = kk; k < kk+B; k++)
 						{
-							mult_matrix[i][j] += matrix_1[i][k] * matrix_2[k][j];
+							mult_matrix[i+j*n]+= matrix_1[i + k * n]*matrix_2[k + j * n];
 						}
 					}
 				}
@@ -74,7 +60,7 @@ int main()
 	//{
 	//	for (int col = 0; col < n; col++)
 	//	{
-	//		cout << mult_matrix[row][col] << " ";
+	//		cout << mult_matrix[row + col * n] << " ";
 	//	}
 	//	cout << endl;
 	//}

@@ -1,4 +1,4 @@
-// Jacobe Method
+// Gauss Seidel Method (Modification of Jacobi Method)
 #include <iostream>
 #include <math.h>
 using namespace std;
