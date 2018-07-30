@@ -85,11 +85,12 @@ int main()
 	//n = input_matrix();
 	//print_matrix(a, b, n);
 
-	const int n = 2;
+	const int n = 3;
 	double a[n][n] = {
-		{ .1036,.2122 },
-		{ .2081,.4247 } };
-	double b[n] = { .7381,.9327 };
+		{ 3, -0.1, -0.2 },
+		{ 0.1, 7, -0.3 },
+		{0.3 , 0.2, 10 } };
+	double b[n] = { 7.85, -19.3, 71.4};
 	double error = 1;
 	double EPSILON = pow(10, -6);
 	x[0] = 300;

@@ -1,3 +1,3 @@
 ﻿  Thomas Algorithm.cpp
-c:\users\shuva\source\repos\thomas algorithm\thomas algorithm\thomas algorithm.cpp(9): warning C4101: 'un': unreferenced local variable
-  Thomas Algorithm.vcxproj -> C:\Users\shuva\source\repos\Thomas Algorithm\Debug\Thomas Algorithm.exe
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\thomas algorithm\thomas algorithm\thomas algorithm.cpp(9): warning C4101: 'un': unreferenced local variable
+  Thomas Algorithm.vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Thomas Algorithm\Debug\Thomas Algorithm.exe

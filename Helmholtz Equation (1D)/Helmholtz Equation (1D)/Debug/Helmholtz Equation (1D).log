@@ -1,0 +1,4 @@
+﻿  Helmholtz Equation (1D).cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\helmholtz equation (1d)\helmholtz equation (1d)\helmholtz equation (1d).cpp(34): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\helmholtz equation (1d)\helmholtz equation (1d)\helmholtz equation (1d).cpp(89): warning C4101: 'error2': unreferenced local variable
+  Helmholtz Equation (1D).vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Helmholtz Equation (1D)\Debug\Helmholtz Equation (1D).exe

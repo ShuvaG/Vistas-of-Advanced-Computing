@@ -17,7 +17,7 @@ ofstream k_energy("KineticEnergy.txt");
 ofstream temperature("Temperature.txt");
 int num_particles = pow(dimension, 3);
 double t = 0;
-double dt = .1;
+double dt = .005;
 double tmax = 20;
 double temp = 1;
 double sigma = 1;
@@ -170,7 +170,7 @@ int main()
 	int i = 0;
 
 	cout << "If you wish the change the number of particles or box size," << endl;
-	cout << "please change the three global variables under VARIABLES TO CHANGE" << endl << endl;
+	cout << "please change the three global variables under VARIABLES TO CHANGE." << endl << endl;
 	cout << "Please wait as files are being written." << endl;
 
 	ATOM_125 << N << endl;
@@ -183,7 +183,7 @@ int main()
 	{
 		force();
 		integrate();
-		if (count % 10 == 0)
+		if (count % 4 == 0)
 		{
 			for (int i = 0; i < N; i++)
 				ATOM_125 << "ATOM" + to_string(i + 1) + " " << x[i][0] << " " << x[i][1] << " " << x[i][2] << endl;

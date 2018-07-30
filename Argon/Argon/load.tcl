@@ -7,8 +7,8 @@ cd C:/Users/shuva/OneDrive/Documents/GitHub/Vistas-of-Advanced-Computing/Argon/A
 #Ex. Size Box = 6
 # Box from (0,0,0) to (L,L,L)---> L=6 and or=0
 # Box from (-L/2,-L/2,-L/2) to (L/2,L/2,L/2)---> L=3 and or=-3 
-set L 6
-set or -6
+set L 3
+set or -3
 
 mol new ATOM125.xyz
 # This is to load all the frames (snapshots)

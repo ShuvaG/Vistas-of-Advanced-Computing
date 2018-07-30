@@ -1,185 +1,89 @@
 // Sudoku Assignment
 // Shuva Gautam and Surbhi Gupta
-/*NOTE = We tried our absolute hardest to debug our logic, but were not able to find the source of our faulty logic. 
-         The final solutions have zeros in matrix, but all of the other Sudoku guidelines still work. 
-		 There are just numbers from 0-9 instead of 1-9.*/
 
 #include <iostream>
 using namespace std;
 int grid[9][9] = {
-{ 1,0,5,3,0,7,0,9,8 },
+	{ 0,0,5,3,0,0,0,0,0 },
 { 8,0,0,0,0,0,0,2,0 },
 { 0,7,0,0,1,0,5,0,0 },
-{ 4,0,6,0,0,5,3,0,2 },
+{ 4,0,0,0,0,5,3,0,0 },
 { 0,1,0,0,7,0,0,0,6 },
 { 0,0,3,2,0,0,0,8,0 },
-{ 0,6,0,5,0,2,0,0,9 },
+{ 0,6,0,5,0,0,0,0,9 },
 { 0,0,4,0,0,0,0,3,0 },
-{ 0,2,0,8,0,9,7,0,0 } };
+{ 0,0,0,0,0,9,7,0,0 } };
 void print_game()
 {
-	for (int r = 0; r < 9; r++)
+	for (int row= 0;row< 9; row++)
 	{
-		for (int c = 0; c < 9; c++)
+		for (int col = 0; col < 9; col++)
 		{
-			if (grid[r][c] == 0)
+			if (grid[row][col] == 0)
 				cout << "." << " ";
 			else
-				cout << grid[r][c] << " ";
+				cout << grid[row][col] << " ";
 		}
 		cout << endl;
 	}
 }
-bool check_row(int r, int n) // This will check to see if there are duplicates in the row
+
+bool conditions(int row, int col, int n) // This will check to see if there are duplicates
 {
-	for (int c = 0; c < 9; c++)
+	int row_beginning, col_beginning;
+	row_beginning = row - row % 3; // The modulo will change the number by box size (each box is a 3 x 3)
+	col_beginning = col - col % 3;
+
+	for (int col = 0; col < 9; col++)
 	{
-		if (grid[r][c] == n)
-			return true; // Indicates duplicate
+		if (grid[row][col] == n)
+			return true; // Indicates duplicate in the ROW
+	}
+	for (int row = 0; row < 9; row++)
+	{
+		if (grid[row][col] == n)
+			return true; // Indicates duplicate in the COLUMN
+	}
+	for (int row = 0; row < 3; row++)
+	{
+		for (int col = 0; col < 3; col++)
+
+		{
+			if (grid[row + row_beginning][col + col_beginning] == n) // Indicated douplicate in the BOX
+				return true;
+		}
 	}
 	return false;
 }
-bool check_col(int c, int n) // This checks if there is a duplicate number in the column
+
+bool check_zeros(int &row, int &col) // Passing by reference because we want to save this row and col value
 {
-	for (int r = 0; r < 9; r++)
+	for (row = 0; row < 9; row++)
 	{
-		if (grid[r][c] == n)
+		for (col = 0; col < 9; col++)
 		{
-			return true; // Indicates duplicate
+			if (grid[row][col] == 0)
+				return true;
 		}
-	}
-	return false;
-}
-bool check_box(int row, int col, int n)
-{
-	int block = (row / 3) * 3 + (col / 3);
-	switch (block)
-	{
-	case 0:
-		for (int r = 0; r < 3; r++)
-		{
-			for (int c = 0; c < 3; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
-	case 1:
-		for (int r = 0; r < 3; r++)
-		{
-			for (int c = 3; c < 6; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
-	case 2:
-		for (int r = 0; r < 3; r++)
-		{
-			for (int c = 6; c < 9; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
-	case 3:
-		for (int r = 3; r < 6; r++)
-		{
-			for (int c = 0; c < 3; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
-	case 4:
-		for (int r = 3; r < 6; r++)
-		{
-			for (int c = 3; c < 6; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
-	case 5:
-		for (int r = 3; r < 6; r++)
-		{
-			for (int c = 6; c < 9; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
-	case 6:
-		for (int r = 6; r < 9; r++)
-		{
-			for (int c = 0; c < 3; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
-	case 7:
-		for (int r = 6; r < 9; r++)
-		{
-			for (int c = 3; c < 6; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
-	case 8:
-		for (int r = 6; r < 9; r++)
-		{
-			for (int c = 6; c < 9; c++)
-			{
-				if (grid[r][c] == n)
-					return true; // Indicates duplicate
-			}
-		}
-		return false;
 	}
 	return false;
 }
 bool Sudoku_solver()
 {
-	int r, c, counter = 0;
-	for (r = 0; r < 9; r++) // FINDING ZERO
+	int row, col, counter = 0;
+	if (check_zeros(row, col)==false) // This checks to find zeros. If there is a zero, the row and col value will be stored.
+		return true; // Number already exists, don't use this row/col value
 	{
-		for (c = 0; c < 9; c++)
-			if (grid[r][c] == 0) counter++; // Counts how many zeros there are.
-	}
-	if (counter == 0) return true;
-	if (counter != 0)
-	{
-		for (r = 0; r < 9; r++) // REASSIGNING ZEROS
-		{
-			for (c = 0; c < 9; c++)
-			{
-				if (grid[r][c] == 0)
-				{
-					for (int n = 1; n < 10 ; n++) // This will assign a number to each zero.
-					{
-						if (check_row(r, n) == false && check_col(c, n) == false && check_box(r, c, n) == false) // This checks to see if it is not a duplicate number
-						{
-							grid[r][c] = n;
-							if (Sudoku_solver()) // This is a recursive process to fill in the empty spaces.
-								return true;
-							else grid[r][c] = 0;
-						}
-					}
-				}
+		for (int n = 1; n <= 9; n++) {
+			if (conditions(row,col, n)==false) {
+				grid[row][col] = n;
+				if (Sudoku_solver())
+					return true;
+				grid[row][col] = 0;
 			}
 		}
 	}
-	return true;
+	return false;
 }
 int main()
 {
@@ -193,10 +97,10 @@ int main()
 		if (Sudoku_solver())
 		{
 			cout << "The solution to this game is:" << endl;
-			for (int r = 0; r < 9; r++)
+			for (int row= 0; row< 9; row++)
 			{
-				for (int c = 0; c < 9; c++)
-					cout << grid[r][c] << " ";
+				for (int col = 0; col < 9; col++)
+					cout << grid[row][col] << " ";
 				cout << endl;
 			}
 		}

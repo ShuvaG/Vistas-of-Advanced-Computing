@@ -8,7 +8,7 @@ int main()
 	const int N = 2;
 	double alpha[N], g[N], a, b, c, f[N], u[N], un[N];
 	
-	a = 3;
+	a = 3; // main diagonal
 	b = -1;
 	c = -1;
 	f[0] = -1;
