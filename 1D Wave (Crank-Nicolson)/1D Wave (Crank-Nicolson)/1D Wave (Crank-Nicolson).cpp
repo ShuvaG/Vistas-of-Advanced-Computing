@@ -1,4 +1,4 @@
-// 1D Wave Equation (Explicit)
+// 1D Wave Equation (Crank-Nicolson)
 
 #include <iostream>
 #include <fstream>

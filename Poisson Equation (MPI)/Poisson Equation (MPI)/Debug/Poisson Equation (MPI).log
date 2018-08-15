@@ -1,0 +1,4 @@
+﻿  Poisson Equation (MPI).cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\poisson equation (mpi)\poisson equation (mpi)\poisson equation (mpi).cpp(34): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\poisson equation (mpi)\poisson equation (mpi)\poisson equation (mpi).cpp(92): warning C4101: 'error2': unreferenced local variable
+  Poisson Equation (MPI).vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Poisson Equation (MPI)\Debug\Poisson Equation (MPI).exe

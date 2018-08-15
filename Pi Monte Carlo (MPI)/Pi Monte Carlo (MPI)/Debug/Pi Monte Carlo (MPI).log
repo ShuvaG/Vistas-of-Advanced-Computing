@@ -1,0 +1,7 @@
+﻿  Pi Monte Carlo (MPI)cpp.cpp
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo (mpi)\pi monte carlo (mpi)\pi monte carlo (mpi)cpp.cpp(16): warning C4305: 'initializing': truncation from '__int64' to 'int'
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo (mpi)\pi monte carlo (mpi)\pi monte carlo (mpi)cpp.cpp(16): warning C4309: 'initializing': truncation of constant value
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo (mpi)\pi monte carlo (mpi)\pi monte carlo (mpi)cpp.cpp(14): warning C4101: 'square_total': unreferenced local variable
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo (mpi)\pi monte carlo (mpi)\pi monte carlo (mpi)cpp.cpp(14): warning C4101: 'circle_total': unreferenced local variable
+c:\users\shuva\onedrive\documents\github\vistas-of-advanced-computing\pi monte carlo (mpi)\pi monte carlo (mpi)\pi monte carlo (mpi)cpp.cpp(14): warning C4101: 'pi_total': unreferenced local variable
+  Pi Monte Carlo (MPI).vcxproj -> C:\Users\shuva\OneDrive\Documents\GitHub\Vistas-of-Advanced-Computing\Pi Monte Carlo (MPI)\Debug\Pi Monte Carlo (MPI).exe
